@@ -1,0 +1,381 @@
+// sass --watch source:build
+
+// * Функции для перевода в относительные значения
+
+@function toRem($value) {
+  $remValue: calc($value / 16) + rem;
+  @return $remValue;
+}
+
+@function toEm($value) {
+  $remValue: calc($value / 16) + em;
+  @return $remValue;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+h1,
+h2,
+h3,
+p {
+  text-wrap: balance;
+}
+
+body {
+  max-width: toRem(1440);
+  margin: 0 auto;
+  padding: 0.25rem;
+  font-family: "Open Sans", "Arial", sans-serif;
+  line-height: 1.2;
+  background-color: #1d2f30;
+  color: #fefae0;
+
+  @media (min-width: toEm(768)) {
+    padding: 2rem;
+  }
+
+  @media (min-width: toEm(1024)) {
+    padding: 5rem;
+  }
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Georgia", "Times New Roman", "Times", serif
+}
+
+.typography {
+  div {
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: 8px;
+
+    &:nth-child(even) {
+      outline: 1px solid rgba(254, 250, 224, 0.5);
+    }
+
+    &:nth-child(odd) {
+      background-color: #0b1919;
+      background-image: url("../image/leafs.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: bottom;
+    }
+  }
+
+  h1.px {
+    font-size: 32px;
+  }
+
+  p.px {
+    font-size: 16px;
+  }
+
+  h1.rem {
+    font-size: 2rem;
+  }
+
+  p.rem {
+    font-size: 1rem;
+  }
+
+  p {
+    b {
+      color: #b58791;
+    }
+  }
+}
+
+.inners {
+  background-color: #fefae0;
+  color: #0b1919;
+
+  .wrapper {
+    margin: 2rem 0;
+    outline: 1px solid #1d2f30;
+  }
+
+
+
+  // * Все значения в rem
+
+  // .header {
+  //   margin: 0;
+  //   padding: 1.5rem 1rem;
+  //   color: #fefae0;
+  //   background-color: #1d2f30;
+  // }
+
+  // .header--large {
+  //   font-size: 3rem;
+  // }
+
+  // .header--regular {
+  //   padding: 0.75rem 1rem;
+  //   font-size: 1.5rem;
+  // }
+
+  // p {
+  //   margin: 0;
+  //   padding: 0.75rem 1rem;
+  // }
+
+  // * Все значения в em
+
+  // .header {
+  //   margin: 0;
+  //   padding: 0.75em 1em;
+  //   color: #fefae0;
+  //   background-color: #1d2f30;
+  // }
+
+  // .header--large {
+  //   font-size: 3rem;
+  // }
+
+  // .header--regular {
+  //   font-size: 1.5rem;
+  // }
+
+  // p {
+  //   margin: 0;
+  //   padding: 0.75em 1em;
+  // }
+
+  // * Сочетание em + rem
+
+  .header {
+    margin: 0;
+    padding: 0.75em 1rem;
+    color: #fefae0;
+    background-color: #1d2f30;
+  }
+
+  .header--large {
+    font-size: 3rem;
+  }
+
+  .header--regular {
+    font-size: 1.5rem;
+  }
+
+  p {
+    margin: 0;
+    padding: 0.75em 1rem;
+  }
+}
+
+.sidebar {
+  .grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: auto;
+
+    // * Боковая панель имеет ширину 350px; сетка перестраивается на 1024px
+    // * -> правая панель сужается при увеличении шрифта
+    // @media (min-width: 1024px) {
+    //   grid-template-columns: 1fr 350px;
+    // }
+
+    // * Боковая панель адаптируется под размер шрифта; сетка перестраивается на 1024px
+    // * -> основной контент сужается, нужно перестроить сетку при увеличении шрифта
+    // @media (min-width: 1024px) {
+    //   grid-template-columns: 1fr toRem(350);
+    // }
+
+    // * Все части адаптируются при увеличении шрифта
+    @media (min-width: toEm(1024)) {
+      grid-template-columns: 1fr toRem(350);
+    }
+  }
+
+  p.rem {
+    font-size: 1rem;
+
+    b {
+      color: #b58791;
+    }
+  }
+
+  section {
+    padding: 2rem;
+    background-image: url("../image/flower.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right -90px bottom -80px;
+    outline: 1px solid rgba(254, 250, 224, 0.5);
+    border-radius: 8px;
+
+    @media (min-width: toEm(1024)) {
+      background-position: right -140px bottom -110px;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+  }
+
+  aside {
+    padding: 2rem;
+    background-color: #0b1919;
+    border-radius: 8px;
+
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+// * Резиновый интерфейс
+
+$mobile-breakpoint: 320px;
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1440px;
+
+// * Mobile-desktop
+@function fluid($min-size, $max-size, $min-breakpoint: $mobile-breakpoint, $max-breakpoint: $desktop-breakpoint) {
+  $min-size-px: $min-size * 1px;
+  $max-size-px: $max-size * 1px;
+
+  $fluid-value: (
+    $max-size-px - $min-size-px) / ($max-breakpoint - $min-breakpoint
+  );
+$intercept: $min-size-px - $fluid-value * $min-breakpoint;
+@return clamp(toRem($min-size), $fluid-value * 100vw + $intercept, toRem($max-size));
+}
+
+// * Mobile-tablet
+@function fluid-mobile($min-size, $max-size, $min-breakpoint: $mobile-breakpoint, $max-breakpoint: $tablet-breakpoint) {
+  $min-size-px: $min-size * 1px;
+  $max-size-px: $max-size * 1px;
+
+  $fluid-value: (
+    $max-size-px - $min-size-px) / ($max-breakpoint - $min-breakpoint
+  );
+$intercept: $min-size-px - $fluid-value * $min-breakpoint;
+@return clamp(toRem($min-size), $fluid-value * 100vw + $intercept, toRem($max-size));
+}
+
+// * Tablet-desktop
+@function fluid-tablet($min-size, $max-size, $min-breakpoint: $tablet-breakpoint, $max-breakpoint: $desktop-breakpoint) {
+  $min-size-px: $min-size * 1px;
+  $max-size-px: $max-size * 1px;
+
+  $fluid-value: (
+    $max-size-px - $min-size-px) / ($max-breakpoint - $min-breakpoint
+  );
+$intercept: $min-size-px - $fluid-value * $min-breakpoint;
+@return clamp(toRem($min-size), $fluid-value * 100vw + $intercept, toRem($max-size));
+}
+
+.fluid {
+  h1 {
+    font-size: fluid-mobile(24, 36);
+
+    @media (min-width: toEm(768)) {
+      font-size: fluid-tablet(36, 48);
+    }
+  }
+
+  p {
+    font-size: fluid-mobile(16, 24);
+
+    @media (min-width: toEm(768)) {
+      font-size: fluid-tablet(24, 36);
+    }
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(toRem(300), 1fr));
+    gap: toRem(30);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    outline: 1px solid #0b1919;
+    transition: outline 0.3s linear;
+
+    div:has(img) {
+      padding: toRem(30) toRem(24);
+      background-color: #0b1919;
+    }
+
+    div:has(h2) {
+      display: grid;
+      gap: toRem(10);
+      padding-bottom: fluid(15, 30);
+    }
+
+    img {
+      width: 100%;
+    }
+
+    h2 {
+      font-size: fluid-mobile(24, 36);
+      line-height: 1.5;
+      margin: 0;
+      padding: toEm(16) toRem(24) toEm(8);
+
+      @media (min-width: toEm(768)) {
+        font-size: fluid-tablet(36, 48);
+      }
+    }
+
+    p {
+      margin: 0;
+      padding: toEm(8) toRem(24);
+      font-size: fluid-mobile(16, 24);
+      line-height: 1.5;
+      opacity: 0.7;
+
+      @media (min-width: toEm(768)) {
+        font-size: fluid-tablet(24, 36);
+      }
+    }
+
+    a {
+      margin: toEm(40) toRem(24) 0;
+      width: fit-content;
+      padding: toRem(10) toRem(28);
+      font-size: fluid-mobile(16, 24);
+      line-height: 1.5;
+      text-decoration: none;
+      color: #bae249;
+      outline: 1px solid #bae249;
+      transition:
+        color 0.3s linear,
+        background-color 0.3s linear;
+
+      @media (min-width: toEm(768)) {
+        font-size: fluid-tablet(24, 36);
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: #0b1919;
+        background-color: #bae249;
+      }
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      outline: 1px solid rgba(254, 250, 224, 0.5);
+    }
+  }
+}
