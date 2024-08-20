@@ -12,6 +12,13 @@
   @return $remValue;
 }
 
+// :root {
+// 	--16px: 1rem;
+// 	--24px: 1.5rem;
+// 	--32px: 2rem;
+// 	--300px: 18.75rem;
+// }
+
 *,
 *::before,
 *::after {
@@ -106,30 +113,28 @@ h3 {
     outline: 1px solid #1d2f30;
   }
 
-
-
   // * Все значения в rem
 
-  // .header {
-  //   margin: 0;
-  //   padding: 1.5rem 1rem;
-  //   color: #fefae0;
-  //   background-color: #1d2f30;
-  // }
+  .header {
+    margin: 0;
+    padding: 1.5rem 1rem;
+    color: #fefae0;
+    background-color: #1d2f30;
+  }
 
-  // .header--large {
-  //   font-size: 3rem;
-  // }
+  .header--large {
+    font-size: 3rem;
+  }
 
-  // .header--regular {
-  //   padding: 0.75rem 1rem;
-  //   font-size: 1.5rem;
-  // }
+  .header--regular {
+    // padding: 0.75rem 1rem;
+    font-size: 1.5rem;
+  }
 
-  // p {
-  //   margin: 0;
-  //   padding: 0.75rem 1rem;
-  // }
+  p {
+    margin: 0;
+    padding: 0.75rem 1rem;
+  }
 
   // * Все значения в em
 
@@ -155,25 +160,25 @@ h3 {
 
   // * Сочетание em + rem
 
-  .header {
-    margin: 0;
-    padding: 0.75em 1rem;
-    color: #fefae0;
-    background-color: #1d2f30;
-  }
+  // .header {
+  //   margin: 0;
+  //   padding: 0.75em 1rem;
+  //   color: #fefae0;
+  //   background-color: #1d2f30;
+  // }
 
-  .header--large {
-    font-size: 3rem;
-  }
+  // .header--large {
+  //   font-size: 3rem;
+  // }
 
-  .header--regular {
-    font-size: 1.5rem;
-  }
+  // .header--regular {
+  //   font-size: 1.5rem;
+  // }
 
-  p {
-    margin: 0;
-    padding: 0.75em 1rem;
-  }
+  // p {
+  //   margin: 0;
+  //   padding: 0.75em 1rem;
+  // }
 }
 
 .sidebar {
