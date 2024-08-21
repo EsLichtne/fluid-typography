@@ -251,11 +251,9 @@ $desktop-breakpoint: 1440px;
   $min-size-px: $min-size * 1px;
   $max-size-px: $max-size * 1px;
 
-  $fluid-value: (
-    $max-size-px - $min-size-px) / ($max-breakpoint - $min-breakpoint
-  );
-$intercept: $min-size-px - $fluid-value * $min-breakpoint;
-@return clamp(toRem($min-size), $fluid-value * 100vw + $intercept, toRem($max-size));
+  $fluid-value: calc(($max-size-px - $min-size-px) / ($max-breakpoint - $min-breakpoint));
+  $intercept: $min-size-px - $fluid-value * $min-breakpoint;
+  @return clamp(toRem($min-size), $fluid-value * 100vw + $intercept, toRem($max-size));
 }
 
 // * Mobile-tablet
@@ -263,11 +261,9 @@ $intercept: $min-size-px - $fluid-value * $min-breakpoint;
   $min-size-px: $min-size * 1px;
   $max-size-px: $max-size * 1px;
 
-  $fluid-value: (
-    $max-size-px - $min-size-px) / ($max-breakpoint - $min-breakpoint
-  );
-$intercept: $min-size-px - $fluid-value * $min-breakpoint;
-@return clamp(toRem($min-size), $fluid-value * 100vw + $intercept, toRem($max-size));
+  $fluid-value: calc(($max-size-px - $min-size-px) / ($max-breakpoint - $min-breakpoint));
+  $intercept: $min-size-px - $fluid-value * $min-breakpoint;
+  @return clamp(toRem($min-size), $fluid-value * 100vw + $intercept, toRem($max-size));
 }
 
 // * Tablet-desktop
@@ -275,11 +271,9 @@ $intercept: $min-size-px - $fluid-value * $min-breakpoint;
   $min-size-px: $min-size * 1px;
   $max-size-px: $max-size * 1px;
 
-  $fluid-value: (
-    $max-size-px - $min-size-px) / ($max-breakpoint - $min-breakpoint
-  );
-$intercept: $min-size-px - $fluid-value * $min-breakpoint;
-@return clamp(toRem($min-size), $fluid-value * 100vw + $intercept, toRem($max-size));
+  $fluid-value: calc(($max-size-px - $min-size-px) / ($max-breakpoint - $min-breakpoint));
+  $intercept: $min-size-px - $fluid-value * $min-breakpoint;
+  @return clamp(toRem($min-size), $fluid-value * 100vw + $intercept, toRem($max-size));
 }
 
 .fluid {
