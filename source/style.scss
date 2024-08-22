@@ -106,77 +106,78 @@ h3 {
   background-color: #fefae0;
   color: #0b1919;
 
-  .wrapper {
+  &__wrapper {
     margin: 2rem 0;
     outline: 1px solid #1d2f30;
   }
 
-  // * Все значения в rem
+  &__title {
+    margin: 1rem 0;
+    font-size: 2rem;
+  }
 
-  .header {
+  code {
+    background-color: #ddd9bd;
+    border-radius: 4px;
+    padding: 0 0.2em;
+  }
+
+  &__header {
     margin: 0;
-    padding: 1.5rem 1rem;
     color: #fefae0;
     background-color: #1d2f30;
+
+    &--large {
+      font-size: 3rem;
+    }
+
+    &--regular {
+      font-size: 1.5rem;
+    }
   }
 
-  .header--large {
-    font-size: 3rem;
-  }
-
-  .header--regular {
-    // padding: 0.75rem 1rem;
-    font-size: 1.5rem;
-  }
-
-  p {
+  &__description {
     margin: 0;
-    padding: 0.75rem 1rem;
   }
 
-  // * Все значения в em
+  &__container {
+    // * Все значения в rem
+    &--rem {
+      .inners__header {
+        padding: 1.5rem 1rem;
+      }
 
-  // .header {
-  //   margin: 0;
-  //   padding: 0.75em 1em;
-  //   color: #fefae0;
-  //   background-color: #1d2f30;
-  // }
+      .inners__header--regular {
+        padding: 0.75rem 1rem;
+      }
 
-  // .header--large {
-  //   font-size: 3rem;
-  // }
+      .inners__description {
+        padding: 0.75rem 1rem;
+      }
+    }
 
-  // .header--regular {
-  //   font-size: 1.5rem;
-  // }
+    // * Все значения в em
+    &--em {
+      .inners__header {
+        padding: 0.75em 1em;
+      }
 
-  // p {
-  //   margin: 0;
-  //   padding: 0.75em 1em;
-  // }
+      .inners__description {
+        padding: 0.75em 1em;
+      }
+    }
 
-  // * Сочетание em + rem
+    // * Сочетание em + rem
+    &--em-rem {
+      .inners__header {
+        padding: 0.75em 1rem;
+      }
 
-  // .header {
-  //   margin: 0;
-  //   padding: 0.75em 1rem;
-  //   color: #fefae0;
-  //   background-color: #1d2f30;
-  // }
-
-  // .header--large {
-  //   font-size: 3rem;
-  // }
-
-  // .header--regular {
-  //   font-size: 1.5rem;
-  // }
-
-  // p {
-  //   margin: 0;
-  //   padding: 0.75em 1rem;
-  // }
+      .inners__description {
+        padding: 0.75em 1rem;
+      }
+    }
+  }
 }
 
 .sidebar {
