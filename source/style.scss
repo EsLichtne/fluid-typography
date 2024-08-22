@@ -303,6 +303,12 @@ $desktop-breakpoint: 1440px;
 }
 
 .fluid {
+  padding: fluid-mobile(10, 15);
+
+  @media (min-width: toEm(768)) {
+    padding: fluid-tablet(15, 30);
+  }
+
   &__title {
     &--large {
       margin: 0;
