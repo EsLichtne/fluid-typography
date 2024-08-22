@@ -191,7 +191,7 @@ code {
     background-clip: text;
     color: transparent;
   }
-  
+
   &__grid {
     display: grid;
     gap: 2rem;
@@ -303,64 +303,84 @@ $desktop-breakpoint: 1440px;
 }
 
 .fluid {
-  h1 {
-    font-size: fluid-mobile(24, 36);
+  &__title {
+    &--large {
+      margin: 0;
+      margin-bottom: fluid-mobile(16, 24);
+      font-size: fluid-mobile(24, 36);
 
-    @media (min-width: toEm(768)) {
-      font-size: fluid-tablet(36, 48);
+      @media (min-width: toEm(768)) {
+        margin-bottom: fluid-tablet(24, 36);
+        font-size: fluid-tablet(36, 48);
+      }
     }
   }
 
-  p {
+  &__description {
+    margin: 0;
+    margin-bottom: fluid-mobile(16, 24);
     font-size: fluid-mobile(16, 24);
 
     @media (min-width: toEm(768)) {
+      margin-bottom: fluid-tablet(24, 36);
       font-size: fluid-tablet(24, 36);
     }
   }
 
-  ul {
+  &__list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(toRem(300), 1fr));
-    gap: toRem(30);
+    gap: fluid-mobile(30, 45);
     margin: 0;
     padding: 0;
     list-style: none;
+
+    @media (min-width: toEm(768)) {
+      gap: fluid-tablet(45, 60);
+    }
   }
 
-  li {
+  .card {
+
     outline: 1px solid #0b1919;
     transition: outline 0.3s linear;
 
-    div:has(img) {
-      padding: toRem(30) toRem(24);
+    &__wrapper:has(.card__image) {
+      padding: fluid-mobile(30, 45) fluid-mobile(24, 36);
       background-color: #0b1919;
+
+      @media (min-width: toEm(768)) {
+        padding: fluid-tablet(45, 60) fluid-tablet(36, 48);
+      }
     }
 
-    div:has(h2) {
+    &__wrapper:has(.card__title) {
       display: grid;
-      gap: toRem(10);
-      padding-bottom: fluid(15, 30);
+      gap: fluid-mobile(10, 20);
+      padding: fluid-mobile(16, 24) fluid-mobile(24, 36);
+
+      @media (min-width: toEm(768)) {
+        gap: fluid-tablet(20, 30);
+        padding: fluid-tablet(24, 36) fluid-tablet(36, 48);
+      }
     }
 
-    img {
-      width: 100%;
-    }
-
-    h2 {
+    &__title {
+      margin: 0;
       font-size: fluid-mobile(24, 36);
       line-height: 1.5;
-      margin: 0;
-      padding: toEm(16) toRem(24) toEm(8);
 
       @media (min-width: toEm(768)) {
         font-size: fluid-tablet(36, 48);
       }
     }
 
-    p {
+    &__image {
+      width: 100%;
+    }
+
+    &__description {
       margin: 0;
-      padding: toEm(8) toRem(24);
       font-size: fluid-mobile(16, 24);
       line-height: 1.5;
       opacity: 0.7;
@@ -370,10 +390,9 @@ $desktop-breakpoint: 1440px;
       }
     }
 
-    a {
-      margin: toEm(40) toRem(24) 0;
+    &__link {
       width: fit-content;
-      padding: toRem(10) toRem(28);
+      padding: fluid-mobile(10, 15) fluid-mobile(20, 25);
       font-size: fluid-mobile(16, 24);
       line-height: 1.5;
       text-decoration: none;
@@ -384,6 +403,7 @@ $desktop-breakpoint: 1440px;
         background-color 0.3s linear;
 
       @media (min-width: toEm(768)) {
+        padding: fluid-tablet(15, 20) fluid-tablet(25, 30);
         font-size: fluid-tablet(24, 36);
       }
 
