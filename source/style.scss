@@ -36,6 +36,12 @@ p {
   text-wrap: balance;
 }
 
+h1,
+h2,
+h3 {
+  font-family: "Georgia", "Times New Roman", "Times", serif
+}
+
 body {
   max-width: toRem(1440);
   margin: 0 auto;
@@ -54,10 +60,10 @@ body {
   }
 }
 
-h1,
-h2,
-h3 {
-  font-family: "Georgia", "Times New Roman", "Times", serif
+code {
+  background-color: #ddd9bd;
+  border-radius: 4px;
+  padding: 0 0.2em;
 }
 
 .typography {
@@ -116,12 +122,6 @@ h3 {
   &__title {
     margin: 1rem 0;
     font-size: 2rem;
-  }
-
-  code {
-    background-color: #ddd9bd;
-    border-radius: 4px;
-    padding: 0 0.2em;
   }
 
   &__header {
@@ -183,30 +183,46 @@ h3 {
 }
 
 .sidebar {
-  .grid {
+  &__header {
+    grid-column: 1 / -1;
+    margin: 0;
+    font-size: 2rem;
+    background-image: linear-gradient(#b58791, #c69995, #d1ae9c, #d8c3aa, #ddd9bd);
+    background-clip: text;
+    color: transparent;
+  }
+  
+  &__grid {
     display: grid;
     gap: 2rem;
     grid-template-columns: auto;
+    margin-bottom: 2rem;
 
-    // * Боковая панель имеет ширину 350px; сетка перестраивается на 1024px
-    // * -> правая панель сужается при увеличении шрифта
-    // @media (min-width: 1024px) {
-    //   grid-template-columns: 1fr 350px;
-    // }
+    &--fixed {
+      // * Боковая панель имеет ширину 350px; сетка перестраивается на 1024px
+      // * -> правая панель сужается при увеличении шрифта
+      @media (min-width: 1024px) {
+        grid-template-columns: 1fr 350px;
+      }
+    }
 
-    // * Боковая панель адаптируется под размер шрифта; сетка перестраивается на 1024px
-    // * -> основной контент сужается, нужно перестроить сетку при увеличении шрифта
-    // @media (min-width: 1024px) {
-    //   grid-template-columns: 1fr toRem(350);
-    // }
+    &--half-fixed {
+      // * Боковая панель адаптируется под размер шрифта; сетка перестраивается на 1024px
+      // * -> основной контент сужается, нужно перестроить сетку при увеличении шрифта
+      @media (min-width: 1024px) {
+        grid-template-columns: 1fr toRem(350);
+      }
+    }
 
-    // * Все части адаптируются при увеличении шрифта
-    @media (min-width: toEm(1024)) {
-      grid-template-columns: 1fr toRem(350);
+    &--relative {
+      // * Все части адаптируются при увеличении шрифта
+      @media (min-width: toEm(1024)) {
+        grid-template-columns: 1fr toRem(350);
+      }
     }
   }
 
-  p.rem {
+  &__description {
     font-size: 1rem;
 
     b {
@@ -214,7 +230,7 @@ h3 {
     }
   }
 
-  section {
+  &__section {
     padding: 2rem;
     background-image: url("../image/flower.png");
     background-repeat: no-repeat;
@@ -226,20 +242,27 @@ h3 {
     @media (min-width: toEm(1024)) {
       background-position: right -140px bottom -110px;
     }
-
-    h1 {
-      font-size: 2rem;
-    }
   }
 
-  aside {
+  &__aside {
     padding: 2rem;
     background-color: #0b1919;
     border-radius: 8px;
+  }
 
-    h2 {
+  &__title {
+    &--large {
+      font-size: 2rem;
+    }
+
+    &--regular {
       font-size: 1.5rem;
     }
+  }
+
+  code {
+    padding: 0 0.4em;
+    color: #0b1919;
   }
 }
 

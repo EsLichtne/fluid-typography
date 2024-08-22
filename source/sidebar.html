@@ -10,40 +10,121 @@
 </head>
 
 <body class="sidebar">
-  <main class="grid">
-    <section>
-      <h1>Заголовок с размером шрифта 2rem</h1>
-      <p class="rem">
-        <b>Параграф с размером шрифта 1rem.</b>
-        Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Porro rerum, cum tenetur minus atque fugit eius
-        accusantium! Reprehenderit atque ea veniam? Atque facilis ab distinctio
-        dignissimos sit perferendis laboriosam cupiditate, labore eaque eum quo
-        minus saepe sequi dolorum delectus voluptatem! Itaque animi pariatur
-        quaerat temporibus quasi ratione exercitationem est alias?
-      </p>
-      <p class="rem">
-        <b>Параграф с размером шрифта 1rem.</b>
-        Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Porro rerum, cum tenetur minus atque fugit eius
-        accusantium! Reprehenderit atque ea veniam? Atque facilis ab distinctio
-        dignissimos sit perferendis laboriosam cupiditate, labore eaque eum quo
-        minus saepe sequi dolorum delectus voluptatem! Itaque animi pariatur
-        quaerat temporibus quasi ratione exercitationem est alias?
-      </p>
-    </section>
-    <aside>
-      <h2>Заголовок с размером шрифта 1.5rem</h2>
-      <p class="rem">
-        <b>Параграф с размером шрифта 1rem.</b>
-        Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Porro rerum, cum tenetur minus atque fugit eius
-        accusantium! Reprehenderit atque ea veniam? Atque facilis ab distinctio
-        dignissimos sit perferendis laboriosam cupiditate, labore eaque eum quo
-        minus saepe sequi dolorum delectus voluptatem! Itaque animi pariatur
-        quaerat temporibus quasi ratione exercitationem est alias?
-      </p>
-    </aside>
+  <main>
+    <div class="sidebar__grid sidebar__grid--fixed">
+      <h2 class="sidebar__header">
+        Боковая панель имеет ширину в <code>px</code>, медиазапрос установлен в <code>px</code>
+      </h2>
+      <section class="sidebar__section">
+        <h1 class="sidebar__title sidebar__title--large">Заголовок с размером шрифта 2rem</h1>
+        <p class="sidebar__description">
+          <b>Параграф с размером шрифта 1rem.</b>
+          Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Porro rerum, cum tenetur minus atque fugit eius
+          accusantium! Reprehenderit atque ea veniam? Atque facilis ab distinctio
+          dignissimos sit perferendis laboriosam cupiditate, labore eaque eum quo
+          minus saepe sequi dolorum delectus voluptatem! Itaque animi pariatur
+          quaerat temporibus quasi ratione exercitationem est alias?
+        </p>
+        <p class="sidebar__description">
+          <b>Параграф с размером шрифта 1rem.</b>
+          Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Porro rerum, cum tenetur minus atque fugit eius
+          accusantium! Reprehenderit atque ea veniam? Atque facilis ab distinctio
+          dignissimos sit perferendis laboriosam cupiditate, labore eaque eum quo
+          minus saepe sequi dolorum delectus voluptatem! Itaque animi pariatur
+          quaerat temporibus quasi ratione exercitationem est alias?
+        </p>
+      </section>
+      <aside class="sidebar__aside">
+        <h2 class="sidebar__title sidebar__title--regular">Заголовок с размером шрифта 1.5rem</h2>
+        <p class="sidebar__description">
+          <b>Параграф с размером шрифта 1rem.</b>
+          Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Porro rerum, cum tenetur minus atque fugit eius
+          accusantium! Reprehenderit atque ea veniam? Atque facilis ab distinctio
+          dignissimos sit perferendis laboriosam cupiditate, labore eaque eum quo
+          minus saepe sequi dolorum delectus voluptatem! Itaque animi pariatur
+          quaerat temporibus quasi ratione exercitationem est alias?
+        </p>
+      </aside>
+    </div>
+    <div class="sidebar__grid sidebar__grid--half-fixed">
+      <h2 class="sidebar__header">
+        Боковая панель имеет ширину в <code>rem</code>, медиазапрос установлен в <code>px</code>
+      </h2>
+      <section class="sidebar__section">
+        <h1 class="sidebar__title sidebar__title--large">Заголовок с размером шрифта 2rem</h1>
+        <p class="sidebar__description">
+          <b>Параграф с размером шрифта 1rem.</b>
+          Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Porro rerum, cum tenetur minus atque fugit eius
+          accusantium! Reprehenderit atque ea veniam? Atque facilis ab distinctio
+          dignissimos sit perferendis laboriosam cupiditate, labore eaque eum quo
+          minus saepe sequi dolorum delectus voluptatem! Itaque animi pariatur
+          quaerat temporibus quasi ratione exercitationem est alias?
+        </p>
+        <p class="sidebar__description">
+          <b>Параграф с размером шрифта 1rem.</b>
+          Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Porro rerum, cum tenetur minus atque fugit eius
+          accusantium! Reprehenderit atque ea veniam? Atque facilis ab distinctio
+          dignissimos sit perferendis laboriosam cupiditate, labore eaque eum quo
+          minus saepe sequi dolorum delectus voluptatem! Itaque animi pariatur
+          quaerat temporibus quasi ratione exercitationem est alias?
+        </p>
+      </section>
+      <aside class="sidebar__aside">
+        <h2 class="sidebar__title sidebar__title--regular">Заголовок с размером шрифта 1.5rem</h2>
+        <p class="sidebar__description">
+          <b>Параграф с размером шрифта 1rem.</b>
+          Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Porro rerum, cum tenetur minus atque fugit eius
+          accusantium! Reprehenderit atque ea veniam? Atque facilis ab distinctio
+          dignissimos sit perferendis laboriosam cupiditate, labore eaque eum quo
+          minus saepe sequi dolorum delectus voluptatem! Itaque animi pariatur
+          quaerat temporibus quasi ratione exercitationem est alias?
+        </p>
+      </aside>
+    </div>
+    <div class="sidebar__grid sidebar__grid--relative">
+      <h2 class="sidebar__header">
+        Боковая панель имеет ширину в <code>rem</code>, медиазапрос установлен в <code>em</code>
+      </h2>
+      <section class="sidebar__section">
+        <h1 class="sidebar__title sidebar__title--large">Заголовок с размером шрифта 2rem</h1>
+        <p class="sidebar__description">
+          <b>Параграф с размером шрифта 1rem.</b>
+          Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Porro rerum, cum tenetur minus atque fugit eius
+          accusantium! Reprehenderit atque ea veniam? Atque facilis ab distinctio
+          dignissimos sit perferendis laboriosam cupiditate, labore eaque eum quo
+          minus saepe sequi dolorum delectus voluptatem! Itaque animi pariatur
+          quaerat temporibus quasi ratione exercitationem est alias?
+        </p>
+        <p class="sidebar__description">
+          <b>Параграф с размером шрифта 1rem.</b>
+          Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Porro rerum, cum tenetur minus atque fugit eius
+          accusantium! Reprehenderit atque ea veniam? Atque facilis ab distinctio
+          dignissimos sit perferendis laboriosam cupiditate, labore eaque eum quo
+          minus saepe sequi dolorum delectus voluptatem! Itaque animi pariatur
+          quaerat temporibus quasi ratione exercitationem est alias?
+        </p>
+      </section>
+      <aside class="sidebar__aside">
+        <h2 class="sidebar__title sidebar__title--regular">Заголовок с размером шрифта 1.5rem</h2>
+        <p class="sidebar__description">
+          <b>Параграф с размером шрифта 1rem.</b>
+          Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Porro rerum, cum tenetur minus atque fugit eius
+          accusantium! Reprehenderit atque ea veniam? Atque facilis ab distinctio
+          dignissimos sit perferendis laboriosam cupiditate, labore eaque eum quo
+          minus saepe sequi dolorum delectus voluptatem! Itaque animi pariatur
+          quaerat temporibus quasi ratione exercitationem est alias?
+        </p>
+      </aside>
+    </div>
   </main>
 </body>
 
