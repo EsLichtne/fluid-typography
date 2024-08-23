@@ -10,11 +10,15 @@
   @return $remValue;
 }
 
+@media (min-width: toEm(1024)) {
+  // ...
+}
+
 :root {
-	--16px: 1rem;
-	--24px: 1.5rem;
-	--32px: 2rem;
-	--300px: 18.75rem;
+  --16px: 1rem;
+  --24px: 1.5rem;
+  --32px: 2rem;
+  --300px: 18.75rem;
 }
 
 *,
