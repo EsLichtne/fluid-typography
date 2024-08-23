@@ -10,12 +10,12 @@
   @return $remValue;
 }
 
-// :root {
-// 	--16px: 1rem;
-// 	--24px: 1.5rem;
-// 	--32px: 2rem;
-// 	--300px: 18.75rem;
-// }
+:root {
+	--16px: 1rem;
+	--24px: 1.5rem;
+	--32px: 2rem;
+	--300px: 18.75rem;
+}
 
 *,
 *::before,
